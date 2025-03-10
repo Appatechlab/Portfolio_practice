@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
     background: #1e1e1e;
 }
 
@@ -57,6 +57,7 @@ header{
 nav{
     display: flex;
     gap: 2rem;
+    overflow-y: auto;
 }
 nav a{
     padding-block: .5rem;
@@ -81,12 +82,38 @@ nav a:hover{
 .btn:hover{
     background: #fd6e0084;
 }
+.btn-container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.nav-toggle{
+    display: none;
+}
+.nav-toggle span{
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin-block: 5px;
+    transition: transform .25s ease-in-out;
+}
+.nav-toggle.open span:nth-child(1){
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.open span:nth-child(2){
+    opacity: 0;
+}
+.nav-toggle.open span:nth-child(3){
+    transform: rotate(-45deg) translate(5px, -5px);
+}
 
 .hero{
     display: flex;
     align-items: center;
     gap: 3rem;
     height: calc(100vh - 4rem);
+    scroll-margin: 5rem;
 }
 .hero > div{
     width: 50%;
@@ -332,7 +359,7 @@ progress::-webkit-progress-value {
     gap: 1rem;
 }
 .project_image_container{
-    height: 25rem;
+    height: 22rem;
     border: 1px solid var(--accent-color-border);
     border-radius: 8px;
     margin-top: 2rem;
@@ -512,9 +539,35 @@ footer nav{
     }
 }
 @media (max-width: 900px) {
-    nav{
-        display: none;
+    .nav-toggle{
+        display: block;
     }
+    nav{
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 4.4rem;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: rgb(17, 17, 17);
+        padding-block: 2.5rem;
+        padding-inline: 2rem;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform .25s ease-in-out, visibility .25s ease-in-out;
+    }
+    nav.open{
+        transform: translateX(0);
+        visibility: visible;
+    }
+    .link-active{
+        border: none;
+    }
+    nav a{
+        padding-block: .75rem;
+    }
+
     .image-holder{
         width: 14rem;
         height: 14rem;
@@ -553,7 +606,7 @@ footer nav{
         width: 100%;
     }
     .image-container{
-        height: 20rem;
+        height: 21rem;
     }
     .my-content{
         position: relative;
