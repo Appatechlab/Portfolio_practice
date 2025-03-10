@@ -1,0 +1,30 @@
+{
+  "name": "portfolio_practice",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Appatechlab/Portfolio_practice#readme",
+  "bugs": {
+    "url": "https://github.com/Appatechlab/Portfolio_practice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Appatechlab/Portfolio_practice.git"
+  },
+  "license": "MIT",
+  "author": "Benedict Appati",
+  "type": "commonjs",
+  "main": "js/index.js",
+  
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+
+  "dependencies": {
+    "swiper": "^11.2.5"
+  },
+  "devDependencies": {
+    "vite": "^6.2.1"
+  }
+}
