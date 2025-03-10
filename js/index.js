@@ -49,9 +49,6 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Add scroll event listener
-window.addEventListener('scroll', setActiveLink);
-
 const swiper = new Swiper('.mySwiper', {
   slidesPerView: 'auto',
   spaceBetween: 20,    

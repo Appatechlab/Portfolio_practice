@@ -356,13 +356,13 @@ progress::-webkit-progress-value {
 .project_list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: 1rem;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 .project_image_container{
     height: 22rem;
     border: 1px solid var(--accent-color-border);
     border-radius: 8px;
-    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -635,6 +635,16 @@ footer nav{
     }
 }
 @media (max-width: 620px) {
+    .filter_tag{
+        padding-top: .5rem;
+    }
+    .filter_tag h3{
+        font-size: 1rem;
+        margin-top: .15rem;
+    }
+    .filter_tag p{
+        font-size: .85rem;
+    }
     .testimonial_img{
         display: none;
     }
@@ -672,6 +682,9 @@ footer nav{
 @media (max-width: 500px) {
     .about_me, .services, .projects, .testimonials, .contact, footer {
         padding-block: 2rem;
+    }
+    .btn-container{
+        gap: .85rem;
     }
     .hero-title{
         font-size: 56px;
@@ -725,5 +738,9 @@ footer nav{
         width: 10rem;
         height: 10rem;
         margin: 1rem;
+    }
+    .btn{
+        padding: .35rem .75rem;
+        font-size: 12px;
     }
 }
