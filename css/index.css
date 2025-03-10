@@ -96,6 +96,7 @@ nav a:hover{
     height: 2px;
     background-color: white;
     margin-block: 5px;
+    border-radius: 90px;
     transition: transform .25s ease-in-out;
 }
 .nav-toggle.open span:nth-child(1){
@@ -502,8 +503,9 @@ footer h2{
     font-size: 2rem;
     color: rgba(255, 255, 255, 0.706);
 }
-footer nav{
+.footer_nav{
     display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: .85rem;
@@ -683,6 +685,9 @@ footer nav{
     .about_me, .services, .projects, .testimonials, .contact, footer {
         padding-block: 2rem;
     }
+    .service_container, .testimonial_cards{
+        margin-top: 1.75rem;
+    }
     .btn-container{
         gap: .85rem;
     }
@@ -727,6 +732,9 @@ footer nav{
     }
     .testimonial_container_card{
         width: 100% !important;
+    }
+    .footer_nav a{
+        font-size: 14px;
     }
 }
 @media (max-width: 320px) {
